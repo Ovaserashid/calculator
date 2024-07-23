@@ -1,0 +1,40 @@
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calBorder{
+    display: flex;
+    flex-direction: column;
+}
+.display{
+    border: 2px solid black;
+    width: 100%;
+    height: 30px;
+    background-color: lightslategray;
+    text-align: right;
+}
+.buttonContainer{
+    display: flex;
+    gap: 5px;
+}
+.buttonBox{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.buttonBox div{
+    display: flex;
+    gap: 3px;
+}
+.operationBox{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+button{
+    width: 50px;
+    height: 50px;
+    font-size: larger;
+    font-weight: bolder;
+}
