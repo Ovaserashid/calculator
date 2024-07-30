@@ -1,6 +1,6 @@
 const buttonNumber = document.querySelectorAll('.numbers');
 const buttonEqual = document.querySelector('.equal');
-const buttonDot = document.querySelectorAll('.dot');
+const buttonDot = document.querySelector('.dot');
 const buttonOperation = document.querySelectorAll('.operation');
 const display = document.querySelector('.display');
 
@@ -13,6 +13,7 @@ let operator;
 let result;
 let number1;
 let number2;
+let dot = false;
 
 function finalResult(num1, num2){
     if(operator === '+'){
@@ -67,11 +68,13 @@ buttonNumber.forEach((btn)=>{
         }
     });
 });
+
 buttonOperation.forEach((btn)=>{
     btn.addEventListener('click', (e)=>{
         if(firstNumber === true && secondNumber === false){
             operator = btn.value;
             operation =true;
+            dot = false;
         }else if(firstNumber === true && secondNumber === true){
             result = finalResult(number1, number2);
             displayResult(result);
@@ -80,6 +83,7 @@ buttonOperation.forEach((btn)=>{
             numArray2 = [];
             operator = btn.value;
             operation = true;
+            dot = false;
         }
     });
 });
@@ -92,5 +96,19 @@ buttonEqual.addEventListener('click', (btn)=>{
         firstNumber = false;
         secondNumber = false;
         operation = false;
+        dot = false;
     }
-})
+});
+buttonDot.addEventListener('click', (btn)=>{
+    if(!dot){
+        if(operation === false){
+            numArray1.push('.');
+            number1 = +numArray1.join('');
+            dot = true;
+        }else if(firstNumber === true && operation === true){
+            numArray2.push('.');
+            number2 = +numArray2.join('');
+            dot = true;
+        }
+    }
+});
