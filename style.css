@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 #container {
     display: flex;
     justify-content: center;
@@ -6,17 +10,25 @@
 .calBorder{
     display: flex;
     flex-direction: column;
+    margin: auto;
+    width: 350px;
 }
 .display{
     border: 2px solid black;
     width: 100%;
-    height: 30px;
-    background-color: lightslategray;
+    height: 50px;
+    background-color: rgb(147, 194, 165);
     text-align: right;
+    font-size: 40px;
+    margin: auto;
+    padding-right: 5px;
 }
 .buttonContainer{
     display: flex;
     gap: 5px;
+    background-color: silver;
+    border: 2px solid black;
+    padding: 10px;
 }
 .buttonBox{
     display: flex;
@@ -37,8 +49,35 @@
     gap: 3px;
 }
 button{
-    width: 50px;
-    height: 50px;
+    width: 61.5px;
+    height: 60px;
     font-size: larger;
     font-weight: bolder;
+}
+.numbers, .dot{
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.operation, .pm{
+    background-color: cornflowerblue;
+    border-radius: 50%;
+}
+.backspace, .reset{
+    background-color: orange;
+    border-radius: 20%;
+}
+.equal{
+    background-color: green;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.backspace{
+    font-size: 40px;
+    font-weight: bolder;
+    padding-bottom: 10px;
 }
