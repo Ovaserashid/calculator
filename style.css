@@ -12,22 +12,27 @@
     flex-direction: column;
     margin: auto;
     width: 350px;
+    margin-top: 10%;
+    background-color: silver;
+    border: 2px solid gray;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
 }
 .display{
     border: 2px solid black;
-    width: 100%;
+    width: 90%;
     height: 50px;
     background-color: rgb(147, 194, 165);
     text-align: right;
     font-size: 40px;
-    margin: auto;
+    margin: 30px auto 3px auto;
     padding-right: 5px;
 }
 .buttonContainer{
     display: flex;
     gap: 5px;
-    background-color: silver;
-    border: 2px solid black;
     padding: 10px;
 }
 .buttonBox{
@@ -49,7 +54,7 @@
     gap: 3px;
 }
 button{
-    width: 61.5px;
+    width: 60px;
     height: 60px;
     font-size: larger;
     font-weight: bolder;

@@ -4,6 +4,7 @@ const buttonDot = document.querySelector('.dot');
 const buttonOperation = document.querySelectorAll('.operation');
 const display = document.querySelector('.display');
 const button = document.querySelectorAll('button');
+const pmButton = document.querySelector('.pm');
 
 let numArray1=[];
 let numArray2=[];
@@ -111,6 +112,30 @@ buttonDot.addEventListener('click', (btn)=>{
             numArray2.push('0','.');
             number2 = numArray2.join('');
             dot = true;
+            displayResult(number2);
+        }
+    }
+});
+
+pmButton.addEventListener('click', (btn)=>{
+    if(operation === false && firstNumber === true){
+        if(number1 < 0){
+            numArray1.splice(0,1);
+            number1=numArray1.join('');
+            displayResult(number1);
+        }else if(number1 > 0){
+            numArray1.splice(0,0,'-');
+            number1= +numArray1.join('');
+            displayResult(number1);
+        }
+    }else if(operation === true && secondNumber === true){
+        if(number2 < 0){
+            numArray2.splice(0,1);
+            number2=numArray2.join('');
+            displayResult(number2);
+        }else if(number2 > 0){
+            numArray2.splice(0,0,'-');
+            number2= +numArray2.join('');
             displayResult(number2);
         }
     }
