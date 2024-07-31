@@ -64,6 +64,7 @@ button{
 .operation, .pm{
     background-color: cornflowerblue;
     border-radius: 50%;
+    font-size: 30px;
 }
 .backspace, .reset{
     background-color: orange;
@@ -75,6 +76,7 @@ button{
     border-top-right-radius: 30px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    font-size: 30px;
 }
 .backspace{
     font-size: 40px;

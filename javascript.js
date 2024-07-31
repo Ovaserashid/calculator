@@ -3,6 +3,7 @@ const buttonEqual = document.querySelector('.equal');
 const buttonDot = document.querySelector('.dot');
 const buttonOperation = document.querySelectorAll('.operation');
 const display = document.querySelector('.display');
+const button = document.querySelectorAll('button');
 
 let numArray1=[];
 let numArray2=[];
@@ -73,6 +74,7 @@ buttonOperation.forEach((btn)=>{
         }
     });
 });
+
 buttonEqual.addEventListener('click', (btn)=>{
     if(firstNumber === true && secondNumber === true){
         result = finalResult(number1, number2);
@@ -87,6 +89,7 @@ buttonEqual.addEventListener('click', (btn)=>{
         equalPressed = true;
     }
 });
+
 buttonDot.addEventListener('click', (btn)=>{
     if(!dot){
         if(operation === false && firstNumber === true){
@@ -111,4 +114,13 @@ buttonDot.addEventListener('click', (btn)=>{
             displayResult(number2);
         }
     }
+});
+
+button.forEach((btn)=>{
+    btn.addEventListener('mouseenter', (e)=>{
+        btn.style.opacity = '70%';
+    });
+    btn.addEventListener('mouseleave', (e)=>{
+        btn.style.opacity = '100%';
+    });
 });
