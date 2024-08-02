@@ -3,9 +3,10 @@ const buttonEqual = document.querySelector('.equal');
 const buttonDot = document.querySelector('.dot');
 const buttonOperation = document.querySelectorAll('.operation');
 const display = document.querySelector('.display');
-const button = document.querySelectorAll('button');
 const pmButton = document.querySelector('.pm');
 const backspace = document.querySelector('.backspace');
+const reset = document.querySelector('.reset');
+const percent = document.querySelector('.percent');
 
 let numArray1=[];
 let numArray2=[];
@@ -32,21 +33,33 @@ function finalResult(num1, num2){
 }
 
 function displayResult(value){
-    display.textContent = value;    
+    if(value < 100000000000000 && value > -100000000000000){
+        display.textContent = value;
+    }else {
+        display.textContent = "Out of Limit"; 
+    }   
 }
+
+reset.addEventListener('click', (btn)=>{
+    location.reload();
+});
 
 buttonNumber.forEach((btn)=>{
     btn.addEventListener('click', (e)=>{
         if(operation === false){
-            numArray1.push(btn.value);
-            number1= +numArray1.join('');
-            displayResult(number1);
-            firstNumber = true;
+            if(numArray1.length < 14){
+                numArray1.push(btn.value);
+                number1= numArray1.join('');
+                displayResult(number1);
+                firstNumber = true;
+            }
         }else if(firstNumber === true && operation === true){
-            numArray2.push(btn.value);
-            number2= +numArray2.join('');
-            displayResult(number2);
-            secondNumber = true;
+            if(numArray2.length < 14){
+                numArray2.push(btn.value);
+                number2= numArray2.join('');
+                displayResult(number2);
+                secondNumber = true;
+            }
         }
     });
 });
@@ -58,7 +71,7 @@ buttonOperation.forEach((btn)=>{
             operation =true;
             dot = false;
         }else if(firstNumber === true && secondNumber === true){
-            result = finalResult(number1, number2);
+            result = finalResult(+number1, +number2);
             result = parseFloat(result.toFixed(9));
             displayResult(result);
             number1 = result;
@@ -160,11 +173,23 @@ backspace.addEventListener('click', (btn)=>{
     }
 });
 
-button.forEach((btn)=>{
-    btn.addEventListener('mouseenter', (e)=>{
-        btn.style.opacity = '70%';
-    });
-    btn.addEventListener('mouseleave', (e)=>{
-        btn.style.opacity = '100%';
-    });
+percent.addEventListener('click', (btn)=>{
+    if(firstNumber === true && secondNumber === false){
+        number1= numArray1.join('');
+        number1 = number1/100;
+        displayResult(number1);
+    }else if(secondNumber === true){
+        number2 = numArray2.join('');
+        number2 = number2/100;
+        result = finalResult(+number1, +number2);
+        result = parseFloat(result.toFixed(9));
+        displayResult(result);
+        numArray1 = [];
+        numArray2 = [];
+        firstNumber = false;
+        secondNumber = false;
+        operation = false;
+        dot = false;
+        equalPressed = true;
+    }
 });
