@@ -32,8 +32,26 @@ function finalResult(num1, num2){
     }
 }
 
+function limitDigits(num){
+    if(num <= 99999999999999 && num >= -99999999999999){
+        let limitedNum = num.toString().split('');
+        if(limitedNum.length > 14){
+            let index = limitedNum.indexOf('.');
+            let lengthOfArray = limitedNum.length;
+            limitedNum = +limitedNum.join('');
+            limitedNum = parseFloat(limitedNum.toFixed(14 - index));
+            return limitedNum;
+        }else {
+            return num; 
+        }
+    }else {
+        return num; 
+    }
+    
+}
+
 function displayResult(value){
-    if(value < 100000000000000 && value > -100000000000000){
+    if(value <= 99999999999999 && value >= -99999999999999){
         display.textContent = value;
     }else {
         display.textContent = "Out of Limit"; 
@@ -73,6 +91,7 @@ buttonOperation.forEach((btn)=>{
         }else if(firstNumber === true && secondNumber === true){
             result = finalResult(+number1, +number2);
             result = parseFloat(result.toFixed(9));
+            result = limitDigits(result);
             displayResult(result);
             number1 = result;
             secondNumber = false;
@@ -92,8 +111,9 @@ buttonOperation.forEach((btn)=>{
 
 buttonEqual.addEventListener('click', (btn)=>{
     if(firstNumber === true && secondNumber === true){
-        result = finalResult(+number1, +number2);
-        result = parseFloat(result.toFixed(9));
+        result = finalResult(+number1, +number2);        
+        result = parseFloat(result.toFixed(9));        
+        result = limitDigits(result);        
         displayResult(result);
         numArray1 = [];
         numArray2 = [];
@@ -183,6 +203,7 @@ percent.addEventListener('click', (btn)=>{
         number2 = number2/100;
         result = finalResult(+number1, +number2);
         result = parseFloat(result.toFixed(9));
+        result = limitDigits(result);
         displayResult(result);
         numArray1 = [];
         numArray2 = [];
