@@ -21,6 +21,14 @@
     border-top-right-radius: 5%;
     box-shadow: 0px 0px 0px 3px black;
 }
+
+.heading{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(22, 27, 85);
+}
+
 .display{
     border: 2px solid black;
     width: 90%;
