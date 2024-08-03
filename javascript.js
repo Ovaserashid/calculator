@@ -25,7 +25,10 @@ document.addEventListener('keydown', (boardKey)=>{
     let keyValue = boardKey.key;
     if(document.getElementById(keyValue) != null){
         keyPressed = document.getElementById(keyValue);
-    keyPressed.click();
+        keyPressed.click();
+    }else if(keyValue === 'Enter'){
+        keyPressed = document.getElementById('=');
+        keyPressed.click();
     }    
 });
 
