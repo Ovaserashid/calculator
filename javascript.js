@@ -20,6 +20,15 @@ let number2;
 let dot = false;
 let equalPressed = false;
 
+//Add keyboard support
+document.addEventListener('keydown', (boardKey)=>{
+    let keyValue = boardKey.key;
+    if(document.getElementById(keyValue) != null){
+        keyPressed = document.getElementById(keyValue);
+    keyPressed.click();
+    }    
+});
+
 //This function performs addition, subtraction, division and multiplication of two numbers
 function finalResult(num1, num2){
     if(operator === '+'){
@@ -54,7 +63,7 @@ function limitDigits(num){
 }
 
 function displayResult(value){
-    if(value <= 99999999999999 && value >= -99999999999999) //This checks if the number is within the range
+    if(value <= 99999999999999 && value >= -99999999999999) //Check if the number is within the range
         {
         display.textContent = value;
     }else {
@@ -63,13 +72,13 @@ function displayResult(value){
 }
 
 reset.addEventListener('click', (btn)=>{
-    location.reload(); //This refreshes the page hence resets everything
+    location.reload(); //Refreshes the page hence resets everything
 });
 
 //The following checks when numbers 0-9 are pressed depending on when they are pressed they are stored in first or second variable
 buttonNumber.forEach((btn)=>{
     btn.addEventListener('click', (e)=>{
-        if(operation === false){ //This is the initial state so if number is pressed it will get stored in number1
+        if(operation === false){ //Initial state so if number is pressed it will get stored in number1
             if(numArray1.length < 14){
                 numArray1.push(btn.value);
                 number1= numArray1.join('');
