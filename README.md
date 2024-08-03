@@ -12,21 +12,6 @@
 
 ## Overview
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #333;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
-</style>
-
 This project is a fully functional calculator built with HTML, CSS, and JavaScript. It includes all the basic math operations and several advanced features. The calculator supports addition, subtraction, multiplication, and division operations, and has a user-friendly interface with buttons for digits, operations, an equals key, and additional features like decimal input, clear, and backspace functionalities.
 
 ## Features
