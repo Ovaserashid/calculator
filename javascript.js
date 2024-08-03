@@ -7,6 +7,7 @@ const pmButton = document.querySelector('.pm');
 const backspace = document.querySelector('.backspace');
 const reset = document.querySelector('.reset');
 const percent = document.querySelector('.percent');
+const buttons = document.querySelectorAll('button');
 
 let numArray1=[];
 let numArray2=[];
@@ -20,14 +21,21 @@ let number2;
 let dot = false;
 let equalPressed = false;
 
+//Remove focus from buttons so that if one button is clicked by mouse and enter is used in keyboard the enter should press '=' rather than previous focused button
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.blur();
+    });
+  });
+
 //Add keyboard support
 document.addEventListener('keydown', (boardKey)=>{
     let keyValue = boardKey.key;
+    if(keyValue === 'Enter'){
+        keyValue = '=';
+    }
     if(document.getElementById(keyValue) != null){
         keyPressed = document.getElementById(keyValue);
-        keyPressed.click();
-    }else if(keyValue === 'Enter'){
-        keyPressed = document.getElementById('=');
         keyPressed.click();
     }    
 });
