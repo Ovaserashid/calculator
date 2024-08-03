@@ -54,7 +54,7 @@ This project is a fully functional calculator built with HTML, CSS, and JavaScri
 
 ### HTML
 
-The HTML structure includes buttons for digits (0-9), operations (+, -, *, /), equals (=), clear (C), decimal (.), and backspace. The display is a simple input field.
+The HTML structure includes buttons for digits (0-9), operations (+, -, *, /), equals (=), clear (AC), decimal (.), and backspace. The display is a simple input field.
 
 ### CSS
 
@@ -81,7 +81,7 @@ The JavaScript code includes functions for each basic math operation (add, subtr
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under The Odin Project.
 
 ---
 
