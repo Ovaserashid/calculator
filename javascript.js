@@ -78,7 +78,7 @@ function displayResult(value){
         {
         display.textContent = value;
     }else {
-        display.textContent = "Out of Limit"; //If the number is not within the range display out of limit error
+        display.textContent = "No can do! :("; //If the number is not within the range display out of limit error
     }   
 }
 
